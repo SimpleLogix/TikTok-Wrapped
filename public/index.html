@@ -7,17 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikTok Wrapped</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loading.css">
 </head>
 
 <body>
-    <div class="landing-container center-flex">
+    <div id="landing-container" class="center-flex">
         <div class="landing-title">TikTok Wrapped!</div>
         <div class="center-flex" id="drop-zone">
             <p>Drag your data <i>here</i></p>
         </div>
 
     </div>
+    <div id="loading-container" class="center-flex">
+        Proceessing your data
+        <div class="loading-blocks">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
+    </div>
 
 </body>
 <script src="../dist/index.js" type="module"></script>

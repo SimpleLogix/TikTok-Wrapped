@@ -56,17 +56,16 @@ export class DragAndDropHandler {
         return null;
     }
 
-
     private uploadFile = (file: File) => {
         let reader = new FileReader();
 
         reader.onloadend = () => {
             let json = JSON.parse(reader.result as string);
             // call the callback with the parsed json
+            //TODO: check if contents of the file match expected then save to local storage
             this.onJsonDropped(json);
         }
 
         reader.readAsText(file);
     }
 }
-

@@ -17,10 +17,9 @@ body {
     align-items: center;
 }
 
-.landing-container {
+#landing-container, #loading-container {
     height: 100vh;
     flex-direction: column;
-    gap: 16px;
 }
 
 .landing-title {
@@ -33,8 +32,13 @@ body {
     padding: 15%;
     background-color: #353538;
     height: 10%;
+    margin-top: 16px;
 }
 
 #drop-zone:hover {
     background-color: #404042;
+}
+
+#loading-container {
+    display: none;
 }

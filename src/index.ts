@@ -1,19 +1,22 @@
 import { DragAndDropHandler } from './utils/DragDropHandler.js';
+import { displayLoadingScreen, removeLoadingScreen } from './utils/LoadingAnim.js';
+import { Stats, calculateStats } from './utils/DataAnalysis.js';
+
+// check if data exists in local storage
+let dt = localStorage.getItem("stats");
+if (dt !== null) {
+    goToStatsPage();
+}
 
 // handle when user drags & drops file into drop zone
+//? This function is only called when a json file is dropped
 let handler = new DragAndDropHandler('drop-zone', (json) => {
-    // This function will be called when a json file is dropped
-    console.log(json);
+    displayLoadingScreen()
+    const stats: Stats = calculateStats(json);
+    localStorage.setItem("stats", JSON.stringify(stats));
+    goToStatsPage();
 });
 
-
-
-// make call to server to upload file
-
-// make call to server to process file
-
-// save data to local storage
-
-// send data to next page to display
-
-// check if data already exists in local storage
+function goToStatsPage() {
+    window.location.href = './stats.html';
+}
