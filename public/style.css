@@ -1,0 +1,40 @@
+:root {
+    --black: #1d1d1f;
+    --white: #f5f5f7;
+    color: var(--white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.8px;
+}
+
+body {
+    background-color: var(--black);
+    margin: 0;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-container {
+    height: 100vh;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.landing-title {
+    font-size: 48px;
+}
+
+#drop-zone {
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    padding: 15%;
+    background-color: #353538;
+    height: 10%;
+}
+
+#drop-zone:hover {
+    background-color: #404042;
+}
