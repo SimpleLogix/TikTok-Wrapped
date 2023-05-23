@@ -61,11 +61,14 @@ export class DragAndDropHandler {
 
         reader.onloadend = () => {
             let json = JSON.parse(reader.result as string);
-            // call the callback with the parsed json
-            //TODO: check if contents of the file match expected then save to local storage
-            this.onJsonDropped(json);
+            // check if json is valid
+            //TODO: add keys
+            const keysToCheck = [];
+            if (keysToCheck.every(key => json.has(key))) {
+                // all keys present
+                this.onJsonDropped(json);
+            } 
         }
-
         reader.readAsText(file);
     }
 }

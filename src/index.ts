@@ -11,6 +11,7 @@ if (dt !== null) {
 // handle when user drags & drops file into drop zone
 //? This function is only called when a json file is dropped
 let handler = new DragAndDropHandler('drop-zone', (json) => {
+    // calc & save stats, then push to stats page
     displayLoadingScreen()
     const stats: Stats = calculateStats(json);
     localStorage.setItem("stats", JSON.stringify(stats));
