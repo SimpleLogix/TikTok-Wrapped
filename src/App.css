@@ -81,20 +81,23 @@
 }
 
 #wrapped-button:hover {
-  opacity: 0.85;
+  opacity: 0.95;
   outline-offset: 6px;
 }
 
-#clear-data-button {
+.clear-data-button {
   font-size: 12px;
-  padding-top: 4px;
+  padding-top: 10px;
+  background-color: transparent;
+  border: none;
+  color: var(--white);
 }
 
-#clear-data-button:hover {
+.clear-data-button:hover {
   text-decoration: underline;
 }
 
-#clear-data-button:hover,
+.clear-data-button:hover,
 #wrapped-button:hover {
   cursor: pointer;
 

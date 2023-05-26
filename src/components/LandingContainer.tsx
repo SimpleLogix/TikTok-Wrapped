@@ -39,6 +39,7 @@ const LandingContainer: React.FC<LandingContainerProps> = ({
         if (
           files[0].name.endsWith(".json") ||
           files[0].name.endsWith(".JSON")
+          //TODO: handle invalid json file (add new valid file state?)
         ) {
           return handleFileUpload(files[0]);
         }

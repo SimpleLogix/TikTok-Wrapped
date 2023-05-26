@@ -3,9 +3,10 @@ import { Stats } from "../utils/Stats";
 
 type StatsPageProps = {
   data: Stats;
+  clearDataCallback: () => void;
 };
 
-const StatsPage: React.FC<StatsPageProps> = ({ data }) => {
+const StatsPage: React.FC<StatsPageProps> = ({ data, clearDataCallback }) => {
   return (
     <div id="stats-container" className="center-flex">
       <div className="stats-border">
@@ -45,7 +46,9 @@ const StatsPage: React.FC<StatsPageProps> = ({ data }) => {
         </div>
       </div>
       <div id="wrapped-button">View TikTok Wrapped</div>
-      <div id="clear-data-button">Clear Data</div>
+      <button className="clear-data-button" onClick={clearDataCallback}>
+        Clear Data
+      </button>
     </div>
   );
 };
