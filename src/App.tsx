@@ -4,6 +4,7 @@ import LandingContainer from "./components/LandingContainer";
 import LoadingContainer from "./components/LoadingContainer";
 import StatsPage from "./components/StatsPage";
 import { Stats, EMPTY_STATS, calculateStats } from "./utils/Stats";
+import { gsap } from "gsap";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -38,6 +39,7 @@ const App: React.FC = () => {
     }, 1000);
   };
 
+  //? CALL BACK FUNCTIONS
   // remove old data [text button callback]
   const clearData = () => {
     console.log("clearing data");
@@ -45,12 +47,17 @@ const App: React.FC = () => {
     setIsDataUploaded(false);
   };
 
+
+
   return (
     <div className="background">
       {isLoading ? (
         <LoadingContainer />
       ) : isDataUploaded ? (
-        <StatsPage data={data} clearDataCallback={clearData} />
+        <StatsPage
+          data={data}
+          clearDataCallback={clearData}
+        />
       ) : (
         <LandingContainer onJsonDropped={onJsonDropped} />
       )}

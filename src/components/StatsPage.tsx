@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Stats } from "../utils/Stats";
+import { gsap } from "gsap";
 
 type StatsPageProps = {
   data: Stats;
@@ -7,8 +8,18 @@ type StatsPageProps = {
 };
 
 const StatsPage: React.FC<StatsPageProps> = ({ data, clearDataCallback }) => {
+  const containerRef = useRef(null);
+  const animateWrapped = () => {
+    gsap.to(containerRef.current, {
+      y: "100%",
+      duration: 0.9,
+      onComplete: () => {
+        //TODO- Replace with another FC or do something else
+      },
+    });
+  };
   return (
-    <div id="stats-container" className="center-flex">
+    <div id="stats-container" className="center-flex" ref={containerRef}>
       <div className="stats-border">
         <div className="stats-items">
           <div className="stats-title">User</div>
@@ -45,7 +56,9 @@ const StatsPage: React.FC<StatsPageProps> = ({ data, clearDataCallback }) => {
           </div>
         </div>
       </div>
-      <div id="wrapped-button">View TikTok Wrapped</div>
+      <div id="wrapped-button" onClick={animateWrapped}>
+        View TikTok Wrapped
+      </div>
       <button className="clear-data-button" onClick={clearDataCallback}>
         Clear Data
       </button>
