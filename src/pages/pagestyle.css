@@ -1,0 +1,33 @@
+.page-container {
+    display: flex;
+    height: 100vh;
+    background-color: var(--black);
+}
+
+.left-side,
+.right-side {
+    flex: 1;
+    height: 100%;
+}
+
+.left-side {
+    border-right: 1px solid var(--white)
+}
+
+.right-side {
+    border-left: 1px solid var(--white)
+}
+
+.stats-page-container,
+.intro-page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-page-container {}
+
+.middle-hook {
+    flex-grow: 1;
+    margin-top: 100%;
+    border: 1px solid var(--white);
+}

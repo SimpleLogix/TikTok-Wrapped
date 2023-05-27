@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import LandingContainer from "./components/LandingContainer";
 import LoadingContainer from "./components/LoadingContainer";
-import StatsPage from "./components/StatsPage";
+import StatsPage from "./pages/StatsPage";
 import { Stats, EMPTY_STATS, calculateStats } from "./utils/Stats";
 import { gsap } from "gsap";
 
