@@ -3,6 +3,8 @@ import AOS from "aos";
 import { Stats } from "../utils/Stats";
 import PageIntro from "./PageIntro";
 import PageOne from "./PageOne";
+import PageTwo from "./PageTwo";
+import PageThree from "./PageThree";
 
 type StatsPageProps = {
   data: Stats;
@@ -20,7 +22,9 @@ const StatsPage: React.FC<StatsPageProps> = ({ data, clearDataCallback }) => {
   return (
     <div className="stats-page-container">
       <PageIntro stats={data}></PageIntro>
-      <PageOne></PageOne>
+      <PageOne stats={data}></PageOne>
+      <PageTwo stats={data}></PageTwo>
+      {/* <PageThree stats={data}></PageThree> */}
       <button className="clear-data-button" onClick={clearDataCallback}>
         Clear Data
       </button>

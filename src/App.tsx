@@ -4,7 +4,6 @@ import LandingContainer from "./components/LandingContainer";
 import LoadingContainer from "./components/LoadingContainer";
 import StatsPage from "./pages/StatsPage";
 import { Stats, EMPTY_STATS, calculateStats } from "./utils/Stats";
-import { gsap } from "gsap";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,8 +22,11 @@ const App: React.FC = () => {
     }
   }, []);
 
+
+  //? CALL BACK FUNCTIONS
   // callback function to the landig container [Drop Zone]
   const onJsonDropped = (json: Map<string, any>) => {
+    //TODO: 
     setIsLoading(true);
     const newData = calculateStats(json);
 
@@ -39,7 +41,6 @@ const App: React.FC = () => {
     }, 1000);
   };
 
-  //? CALL BACK FUNCTIONS
   // remove old data [text button callback]
   const clearData = () => {
     console.log("clearing data");
@@ -47,8 +48,9 @@ const App: React.FC = () => {
     setIsDataUploaded(false);
   };
 
-
-
+  // if the state is loading, display the loading container
+  // if the state has data uploaded, display the stats page
+  // otherwise, display the landing container with drop-zone
   return (
     <div className="background">
       {isLoading ? (

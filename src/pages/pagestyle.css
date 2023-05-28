@@ -11,11 +11,16 @@
 }
 
 .left-side {
-    border-right: 1px solid var(--white)
+    text-align: left;
+
+    border-right: 1px solid var(--white);
+    margin-left: 20vw;
 }
 
 .right-side {
-    border-left: 1px solid var(--white)
+    border-left: 1px solid var(--white);
+    margin-right: 20vw;
+    text-align: right;
 }
 
 .stats-page-container,
@@ -26,8 +31,79 @@
 
 .intro-page-container {}
 
-.middle-hook {
+.hook-left,
+.hook-right {
     flex-grow: 1;
-    margin-top: 100%;
     border: 1px solid var(--white);
+}
+
+.hook-left {
+    margin-top: 10vh;
+}
+
+.hook-right {
+
+    margin-top: 60vh;
+}
+
+.intro-page-container>p {
+    font-size: 48px;
+    margin: 0;
+}
+
+.stats-join-date {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 16vh;
+}
+
+/* inner text */
+.right-side>p {
+    margin: 10px 0 0 10px;
+}
+
+.left-side>p {
+    margin: 10px 10px 0 0;
+}
+
+/*  inner text bolds */
+.right-side>p>span,
+.left-side>p>span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.spacer {
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.swipe-down-text {
+    font-size: 12px
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(6px);
+    }
+
+    60% {
+        transform: translateY(4px);
+    }
+    90%{
+        transform: translateY(2px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
 }
