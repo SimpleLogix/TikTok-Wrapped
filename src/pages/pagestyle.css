@@ -34,8 +34,6 @@
     flex-direction: column;
 }
 
-.intro-page-container {}
-
 .hook-left,
 .hook-right, .hook-white {
     flex-grow: 1;

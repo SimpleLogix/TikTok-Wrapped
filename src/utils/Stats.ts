@@ -20,7 +20,7 @@ export const EMPTY_STATS: Stats = {
     times_opened_app: 0,
 }
 
-// calculate all user stats from raw data (string)
+// calculate all user stats from raw data (uploaded data)
 export function calculateStats(json: any): Stats {
     // convert date to proper format
     return {
@@ -36,7 +36,7 @@ export function calculateStats(json: any): Stats {
 }
 
 
-// converts raw STATS data into user stats
+// converts raw STATS data stored in local storage to Stats interface
 export function parseStats(rawStatsData: string): Stats {
     const json = JSON.parse(rawStatsData);
     return {
@@ -51,6 +51,7 @@ export function parseStats(rawStatsData: string): Stats {
     }
 }
 
+// Returns a nicely formatted date
 function formatDate(dateStr: string): string {
     const date = new Date(dateStr);
     const formatter = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
