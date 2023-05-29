@@ -20,8 +20,7 @@ const App: React.FC = () => {
     if (initialData !== EMPTY_STATS) {
       setIsDataUploaded(true);
     }
-  }, []);
-
+  }, [initialData]);
 
   //? CALL BACK FUNCTIONS
   // callback function to the landig container [Drop Zone]
@@ -56,10 +55,7 @@ const App: React.FC = () => {
       {isLoading ? (
         <LoadingContainer />
       ) : isDataUploaded ? (
-        <StatsPage
-          data={data}
-          clearDataCallback={clearData}
-        />
+        <StatsPage data={data} clearDataCallback={clearData} />
       ) : (
         <LandingContainer onJsonDropped={onJsonDropped} />
       )}

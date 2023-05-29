@@ -10,16 +10,6 @@ const LandingContainer: React.FC<LandingContainerProps> = ({
   const dropzoneRef = useRef<HTMLDivElement | null>(null);
   const [isHighlighted, setIsHighlighted] = useState(false);
 
-  // executed when file is ddropped
-  const handleFileUpload = (file: File) => {
-    let reader = new FileReader();
-    reader.onloadend = () => {
-      let json = JSON.parse(reader.result as string) as Map<string, any>;
-      onJsonDropped(json);
-    };
-    reader.readAsText(file);
-  };
-
   useEffect(() => {
     const dropzone = dropzoneRef.current;
     if (!dropzone) return;
@@ -31,6 +21,16 @@ const LandingContainer: React.FC<LandingContainerProps> = ({
 
     const highlight = () => setIsHighlighted(true);
     const unhighlight = () => setIsHighlighted(false);
+
+    // executed when file is ddropped
+    const handleFileUpload = (file: File) => {
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        let json = JSON.parse(reader.result as string) as Map<string, any>;
+        onJsonDropped(json);
+      };
+      reader.readAsText(file);
+    };
 
     const handleDrop = (e: DragEvent) => {
       unhighlight();
@@ -76,7 +76,7 @@ const LandingContainer: React.FC<LandingContainerProps> = ({
 
       dropzone.removeEventListener("drop", handleDrop, false);
     };
-  }, []); // Pass an empty array to run this effect only once when the component mounts
+  }, [onJsonDropped]); // Pass an empty array to run this effect only once when the component mounts
 
   return (
     <div id="landing-container" className="center-flex">
