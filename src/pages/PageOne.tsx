@@ -10,7 +10,8 @@ const PageOne: React.FC<PageOneProps> = ({ stats }) => {
   return (
     <div className="page-container center-flex">
       <div className="left-side">
-        <div className="hook-left" data-aos="fade-in" data-aos-delay="100"></div>
+        <div className="hook-left pink-hook" data-aos="fade-in" data-aos-delay="100"></div>
+        <div className="hook-right-child" data-aos="fade-in" data-aos-delay="100"></div>
         <p data-aos="fade-in" data-aos-delay="100">You've joined TikTok Back in</p>
         <p className="stats-join-date" data-aos="fade-in" data-aos-delay="1000">{stats.join_date}</p>
         <p data-aos="fade-in" data-aos-delay="1200">
@@ -19,6 +20,7 @@ const PageOne: React.FC<PageOneProps> = ({ stats }) => {
       </div>
       <div className="right-side">
         <div className="hook-right" data-aos="fade-in" data-aos-delay="100"></div>
+        <div className="hook-right-child" data-aos="fade-in" data-aos-delay="100"></div>
         <p data-aos="fade-in" data-aos-delay="100">
           You opened TikTok <span>{stats.times_opened_app}</span> times{" "}
         </p>

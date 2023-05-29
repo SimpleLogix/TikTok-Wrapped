@@ -19,7 +19,7 @@ const PageIntro: React.FC<PageIntroProps> = ({ stats }) => {
       </div>
       <div className="spacer"></div>
       <div className="swipe-down-text" data-aos="fade-in" data-aos-delay="3000">
-        Swipe down to view your TikTok Wrapped Stats
+        Scroll down to view your TikTok Wrapped
       </div>
       <div
         className="swipe-down-text bounce"

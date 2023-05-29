@@ -26,7 +26,7 @@ const App: React.FC = () => {
   //? CALL BACK FUNCTIONS
   // callback function to the landig container [Drop Zone]
   const onJsonDropped = (json: Map<string, any>) => {
-    //TODO: 
+    //TODO: validate json
     setIsLoading(true);
     const newData = calculateStats(json);
 

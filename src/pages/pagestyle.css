@@ -4,22 +4,27 @@
     background-color: var(--black);
 }
 
+.stats-page-container {
+    position: relative;
+}
+
 .left-side,
 .right-side {
     flex: 1;
     height: 100%;
+    max-width: 375px;
 }
 
 .left-side {
     text-align: left;
 
     border-right: 1px solid var(--white);
-    margin-left: 20vw;
+    margin-left: 8vw;
 }
 
 .right-side {
     border-left: 1px solid var(--white);
-    margin-right: 20vw;
+    margin-right: 8vw;
     text-align: right;
 }
 
@@ -32,10 +37,19 @@
 .intro-page-container {}
 
 .hook-left,
-.hook-right {
+.hook-right, .hook-white {
     flex-grow: 1;
     border: 1px solid var(--white);
 }
+
+.hook-left-child, .pink-hook {
+    border: 1px solid var(--pink);
+}
+
+.hook-right-child {
+    border: 1px solid var(--aqua);
+}
+
 
 .hook-left {
     margin-top: 10vh;
@@ -131,4 +145,49 @@
 
 .bounce {
     animation: bounce 2s infinite;
+}
+
+.message {
+    margin-bottom: 16px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.alert {
+    background-color: var(--black);
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    text-align: center;
+}
+
+.alert .message {
+    margin-bottom: 16px;
+}
+
+.alert .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.alert button {
+    margin: 0 8px;
 }
