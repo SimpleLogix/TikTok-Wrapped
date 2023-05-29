@@ -9,7 +9,11 @@ type PageIntroProps = {
 const PageIntro: React.FC<PageIntroProps> = ({ stats }) => {
   return (
     <div className="page-container center-flex intro-page-container">
-      <p data-aos="fade-in">HELLO.</p>
+      <div className="hello-container">
+        <p data-aos="fade-in">HELLO.</p>
+        <p data-aos="fade-in">HELLO.</p>
+        <p data-aos="fade-in">HELLO.</p>
+      </div>
       <div data-aos="fade-in" data-aos-delay="2000">
         <i>{stats.user},</i> Right?
       </div>
@@ -22,7 +26,7 @@ const PageIntro: React.FC<PageIntroProps> = ({ stats }) => {
         data-aos="fade-in"
         data-aos-delay="3000"
       >
-        v  v  v  v  v
+        v v v v v
       </div>
     </div>
   );
