@@ -1,0 +1,77 @@
+.music-player {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 250px;
+    height: 75px;
+    border-radius: 12px;
+    background-color: #353538;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    top: 7.5px;
+    left: 7px;
+    border-radius: 6px;
+    background-color: silver;
+}
+
+* {
+    /* border: 1px solid red;  */
+
+}
+
+.track-metadata {
+    position: relative;
+    flex-direction: column;
+    width: 140px;
+    height: 50px;
+    bottom: 53px;
+    left: 73px;
+}
+
+.track-title {
+    font-size: 16px;
+    letter-spacing: 1.0px;
+    font-weight: 600;
+}
+
+.track-artist {
+    color: whitesmoke;
+    font-size: 14px;
+    letter-spacing: 1.0px;
+    font-weight: 300;
+}
+
+.spotify-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    top: 48px;
+    left: 48px;
+}
+
+.pause-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    border-radius: 50%;
+    top: 17.5px;
+    right: 6px;
+}
+
+.pause-button > img {
+    width: 20px;
+}
+
+.pause-button:hover {
+    width: 42px;
+    height: 42px;
+    right: 4px;
+}
